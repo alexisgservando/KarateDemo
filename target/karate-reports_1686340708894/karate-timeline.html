@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/POST[1:9]","start":1686340648701,"end":1686340652168,"title":"src\/test\/java\/tests\/POST[1:9] 13:57:28.701-13:57:32.168 Post Demo 1"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/POST[2:17]","start":1686340652174,"end":1686340652605,"title":"src\/test\/java\/tests\/POST[2:17] 13:57:32.174-13:57:32.605 Post Demo 2"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/POST[3:25]","start":1686340652610,"end":1686340653030,"title":"src\/test\/java\/tests\/POST[3:25] 13:57:32.610-13:57:33.030 Post Demo 4"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/POST[4:34]","start":1686340653034,"end":1686340653444,"title":"src\/test\/java\/tests\/POST[4:34] 13:57:33.034-13:57:33.444 Post Demo 4","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
